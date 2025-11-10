@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Learning - OOP Concepts</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1>=Ú TypeScript Learning Project</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home (Task Manager)</a></li>
+                <li><a href="about.html" class="active">About (OOP Concepts)</a></li>
+                <li><a href="contact.html">Contact (Form Validation)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h2>Object-Oriented Programming in TypeScript</h2>
+            <p class="subtitle">Learn about Classes, Inheritance, Abstract Classes, and Generics</p>
+        </header>
+
+        <section class="info-section">
+            <h3>Team Members Demo</h3>
+            <p>Below are examples of Developers and Designers created using TypeScript classes:</p>
+            <div id="personInfo" class="person-list">
+                <!-- Dynamically populated by TypeScript -->
+            </div>
+        </section>
+
+        <section class="create-person-section">
+            <h3>Create Your Own Team Member</h3>
+            <form id="createPersonForm" class="person-form">
+                <div class="form-group">
+                    <label for="personName">Name:</label>
+                    <input type="text" id="personName" placeholder="Enter name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personAge">Age:</label>
+                    <input type="number" id="personAge" min="18" max="100" placeholder="Enter age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personType">Type:</label>
+                    <select id="personType">
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="personSkills">Skills/Tools (comma-separated):</label>
+                    <input type="text" id="personSkills" placeholder="e.g., JavaScript, React, CSS" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Add Person</button>
+                    <button type="button" id="clearPersons" class="btn btn-secondary">Clear All</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="learning-notes">
+            <h3>=¡ OOP Concepts Demonstrated</h3>
+            <ul>
+                <li><strong>Abstract Classes:</strong> Person class that cannot be instantiated directly</li>
+                <li><strong>Inheritance:</strong> Developer and Designer extend Person class</li>
+                <li><strong>Access Modifiers:</strong> public, private, protected properties</li>
+                <li><strong>Getters/Setters:</strong> Controlled access to properties</li>
+                <li><strong>Method Override:</strong> Subclasses customize parent methods</li>
+                <li><strong>Generics:</strong> displayInfo&lt;T&gt; works with any Person type</li>
+                <li><strong>Type Guards:</strong> instanceof checks for specific types</li>
+                <li><strong>Readonly:</strong> Properties that can't be changed</li>
+            </ul>
+            <p class="code-hint">=» Open <code>src/about.ts</code> to see detailed code examples!</p>
+        </section>
+
+        <section class="concepts-explained">
+            <h3>=Ö Key Concepts Explained</h3>
+
+            <div class="concept-card">
+                <h4>Abstract Classes</h4>
+                <p>Abstract classes serve as templates. They can't be instantiated directly but provide a base for other classes. The <code>Person</code> class is abstract because people in our system are either Developers or Designers, never just "Person".</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Inheritance</h4>
+                <p>Both Developer and Designer "inherit" from Person, meaning they get all Person's properties and methods while adding their own specific features.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Access Modifiers</h4>
+                <ul>
+                    <li><code>public</code> - Accessible from anywhere (default)</li>
+                    <li><code>private</code> - Only accessible within the class</li>
+                    <li><code>protected</code> - Accessible in class and subclasses</li>
+                </ul>
+            </div>
+
+            <div class="concept-card">
+                <h4>Generics</h4>
+                <p>Generics let you write flexible, reusable code. The <code>&lt;T extends Person&gt;</code> syntax means "this works with Person or any class that extends Person".</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>TypeScript Learning Project | Built with d and TypeScript</p>
+    </footer>
+
+    <script type="module" src="dist/about.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Learning - Form Validation</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1>=Ú TypeScript Learning Project</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home (Task Manager)</a></li>
+                <li><a href="about.html">About (OOP Concepts)</a></li>
+                <li><a href="contact.html" class="active">Contact (Form Validation)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h2>Contact Form with Validation</h2>
+            <p class="subtitle">Learn TypeScript form handling, validation, regex, and utility types</p>
+            <div id="submissionCount" class="submission-count">Total submissions: 0</div>
+        </header>
+
+        <section class="contact-section">
+            <div id="formErrors"></div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="contactName">Name: *</label>
+                    <input type="text" id="contactName" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Email: *</label>
+                    <input type="email" id="contactEmail" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Phone (optional):</label>
+                    <input type="tel" id="contactPhone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactMessage">Message: *</label>
+                    <textarea id="contactMessage" rows="6" placeholder="Your message (minimum 10 characters)" required></textarea>
+                    <small id="charCounter" class="char-counter">500 characters remaining</small>
+                </div>
+
+                <p class="required-note">* Required fields</p>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+
+        <section class="learning-notes">
+            <h3>=¡ TypeScript Concepts Used</h3>
+            <ul>
+                <li><strong>Static Methods:</strong> Validation methods that don't need an instance</li>
+                <li><strong>Regular Expressions:</strong> Pattern matching for email and phone</li>
+                <li><strong>Type Aliases:</strong> ValidationResult custom type</li>
+                <li><strong>Utility Types:</strong> Partial&lt;T&gt; and Readonly&lt;T&gt;</li>
+                <li><strong>Error Handling:</strong> try/catch blocks with proper typing</li>
+                <li><strong>Real-time Validation:</strong> Validate as user types</li>
+                <li><strong>LocalStorage:</strong> Save submissions with type safety</li>
+                <li><strong>Object.freeze():</strong> Make objects immutable</li>
+            </ul>
+            <p class="code-hint">=» Explore <code>src/contact.ts</code> for validation logic!</p>
+        </section>
+
+        <section class="validation-info">
+            <h3>=Ë Validation Rules</h3>
+
+            <div class="validation-rule">
+                <h4>Name Validation</h4>
+                <p> Minimum 2 characters<br> Cannot be empty spaces</p>
+            </div>
+
+            <div class="validation-rule">
+                <h4>Email Validation</h4>
+                <p> Must match email format<br> Must have @ and domain<br> Example: user@example.com</p>
+            </div>
+
+            <div class="validation-rule">
+                <h4>Phone Validation (Optional)</h4>
+                <p> Can contain numbers, spaces, dashes<br> Can include + and parentheses<br> Example: +1 (555) 123-4567</p>
+            </div>
+
+            <div class="validation-rule">
+                <h4>Message Validation</h4>
+                <p> Minimum 10 characters<br> Maximum 500 characters<br> Character counter updates in real-time</p>
+            </div>
+        </section>
+
+        <section class="concepts-explained">
+            <h3>=Ö Advanced TypeScript Features</h3>
+
+            <div class="concept-card">
+                <h4>Static Methods & Properties</h4>
+                <p>Static members belong to the class itself, not instances. You can call <code>ContactFormValidator.validateEmail()</code> without creating a new instance.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Utility Types</h4>
+                <ul>
+                    <li><code>Partial&lt;T&gt;</code> - Makes all properties optional</li>
+                    <li><code>Readonly&lt;T&gt;</code> - Makes all properties readonly</li>
+                    <li><code>Pick&lt;T, K&gt;</code> - Pick specific properties</li>
+                    <li><code>Omit&lt;T, K&gt;</code> - Omit specific properties</li>
+                </ul>
+            </div>
+
+            <div class="concept-card">
+                <h4>Type Guards</h4>
+                <p>Type guards help TypeScript understand what type a variable is at runtime. The <code>if (textarea && counter)</code> checks ensure elements exist before using them.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Immutability</h4>
+                <p>Using <code>Object.freeze()</code> and <code>Readonly</code> types prevents accidental modification of data, making code more predictable and safer.</p>
+            </div>
+        </section>
+
+        <section class="try-it">
+            <h3><¯ Try It Out!</h3>
+            <p>Test the validation by:</p>
+            <ul>
+                <li>Trying to submit an empty form</li>
+                <li>Entering an invalid email (e.g., "notanemail")</li>
+                <li>Writing a message shorter than 10 characters</li>
+                <li>Watching the character counter change as you type</li>
+                <li>Leaving and returning to fields to see real-time validation</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>TypeScript Learning Project | Built with d and TypeScript</p>
+    </footer>
+
+    <script type="module" src="dist/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output (we'll commit dist/ for easy deployment)
+# Uncomment if you don't want to commit compiled files:
+# dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
